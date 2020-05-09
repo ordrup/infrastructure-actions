@@ -14,7 +14,7 @@ async function run() {
     let revision = core.getInput('revision', { required: false });
 
     const params = {
-      taskDefinition: `${family}:${revision ? revision : 'ACTIVE'}`,
+      taskDefinition: `${family}${revision ? `:${revision}` : ''}`,
     };
     
     let describeResponse;

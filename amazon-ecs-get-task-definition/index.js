@@ -37,7 +37,7 @@ async function run() {
     });
     const newTaskDef = {
       family,
-      taskDefinition: describeResponse.taskDefinition,
+      containerDefinitions: describeResponse.taskDefinition.containerDefinitions,
     }
     const newTaskDefContents = JSON.stringify(newTaskDef, null, 2);
     fs.writeFileSync(updatedTaskDefFile.name, newTaskDefContents);

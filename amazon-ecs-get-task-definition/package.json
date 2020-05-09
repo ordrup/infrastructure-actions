@@ -1,0 +1,37 @@
+{
+  "name": "orderup-actions-amazon-ecs-get-task-definition",
+  "version": "0.1.0",
+  "description": "Retrieve Amazon ECS task definition file",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint **.js",
+    "package": "ncc build index.js -o dist",
+    "test": "eslint **.js && jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ordrup/infratructure-actions.git"
+  },
+  "keywords": [
+    "AWS",
+    "GitHub",
+    "Actions",
+    "JavaScript"
+  ],
+  "author": "Matthew Mihok <mihok@orderup.ai>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ordrup/infrastructure-actions/issues"
+  },
+  "homepage": "https://github.com/ordrup/infrastructure-actions/amazon-ecs-get-task-definition#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "aws-sdk": "^2.667.0",
+    "tmp": "^0.1.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.1",
+    "eslint": "^6.8.0",
+    "jest": "^25.5.3"
+  }
+}

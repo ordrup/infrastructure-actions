@@ -1,0 +1,18 @@
+name: 'Amazon ECS "Get Task Definition" Action for GitHub Actions'
+description: 'Retrieve an Amazon ECS task definition.'
+branding:
+  icon: 'cloud'
+  color: 'orange'
+inputs:
+  family:
+    description: 'The family name to the ECS task definition'
+    required: true
+  revision:
+    description: 'The revision to select, otherwise ACTIVE revision is used if not specified'
+    required: false
+outputs:
+  task-definition:
+    description: 'The path to the rendered task definition file'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

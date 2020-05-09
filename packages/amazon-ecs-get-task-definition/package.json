@@ -10,11 +10,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ordrup/infratructure-actions.git",
+    "url": "git://github.com/ordrup/infrastructure-actions.git",
     "directory": "packages/amazon-ecs-get-task-definition"
-  },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
   },
   "keywords": [
     "AWS",

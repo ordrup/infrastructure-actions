@@ -23,7 +23,7 @@ async function run() {
     } catch (error) {
       core.setFailed("Failed to describe task definition in ECS: " + error.message);
       core.debug("Family:");
-      core.debug(params.taskDefinition);
+      core.debug(params.taskDefinition, family, revision);
       throw(error);
     }
 

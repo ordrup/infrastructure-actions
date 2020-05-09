@@ -10,7 +10,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ordrup/infratructure-actions.git"
+    "url": "git://github.com/ordrup/infratructure-actions.git",
+    "directory": "packages/name"
   },
   "publishConfig": {
     "registry":"https://npm.pkg.github.com/"

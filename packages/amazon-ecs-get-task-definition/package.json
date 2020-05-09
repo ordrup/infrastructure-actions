@@ -1,5 +1,5 @@
 {
-  "name": "orderup-actions-amazon-ecs-get-task-definition",
+  "name": "@ordrup/amazon-ecs-get-task-definition",
   "version": "0.1.0",
   "description": "Retrieve Amazon ECS task definition file",
   "main": "index.js",
@@ -10,7 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ordrup/infratructure-actions.git"
+    "url": "git://github.com/ordrup/infratructure-actions.git"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
   },
   "keywords": [
     "AWS",

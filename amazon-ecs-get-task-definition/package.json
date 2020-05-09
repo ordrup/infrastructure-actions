@@ -11,7 +11,7 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/ordrup/infrastructure-actions.git",
-    "directory": "packages/amazon-ecs-get-task-definition"
+    "directory": "amazon-ecs-get-task-definition"
   },
   "keywords": [
     "AWS",

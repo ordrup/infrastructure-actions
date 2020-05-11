@@ -11,6 +11,8 @@ async function run() {
 
     // Get inputs
     const family = core.getInput('family', { required: true });
+    const image = core.getInput('image', { required: true });
+    const containerName = core.getInput('container-name', { required: true });
     let revision = core.getInput('revision', { required: false });
 
     const params = {
@@ -26,6 +28,12 @@ async function run() {
       core.debug(params.taskDefinition, family, revision);
       throw(error);
     }
+
+    const containerDef = describeResponse.taskDefinition.containerDefinitions.find(function(element) {
+      return element.name == containerName;
+    });
+
+    containerDef.image = image;
 
     // Write out a new task definition file
     var updatedTaskDefFile = tmp.fileSync({
@@ -44,7 +52,6 @@ async function run() {
       networkMode: 'awsvpc',
       containerDefinitions: describeResponse.taskDefinition.containerDefinitions,
     }
-
     const newTaskDefContents = JSON.stringify(newTaskDef, null, 2);
     core.debug("Task Definition:");
     core.debug(newTaskDef);

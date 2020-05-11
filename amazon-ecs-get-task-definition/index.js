@@ -14,7 +14,7 @@ async function run() {
     let revision = core.getInput('revision', { required: false });
 
     const params = {
-      taskDefinition: `${family}${revision ? `:${revision}` : ''}`,
+      taskDefinition: `${family}${revision ? `:${revision}` : '18'}`,
     };
     
     let describeResponse;
@@ -39,6 +39,9 @@ async function run() {
       family,
       containerDefinitions: describeResponse.taskDefinition.containerDefinitions,
     }
+
+    // For some reason describing the task definition
+
     const newTaskDefContents = JSON.stringify(newTaskDef, null, 2);
     core.debug("Task Definition:");
     core.debug(newTaskDef);

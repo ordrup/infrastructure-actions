@@ -40,7 +40,16 @@ async function run() {
       containerDefinitions: describeResponse.taskDefinition.containerDefinitions,
     }
 
-    // For some reason describing the task definition
+    // For some reason describing the task definition does not include networkMode
+    // even though documentation suggests it should, and the task definition has
+    // it defined.
+    //
+    // So, we're going to leverage a workaround for now.
+    for (const containerDef of newTaskDef.containerDefinitions) {
+      if (!containerDef.hasOwnProperty('networkMode')) {
+        containerDef.networkMode = 'awsvpc';
+      }
+    }
 
     const newTaskDefContents = JSON.stringify(newTaskDef, null, 2);
     core.debug("Task Definition:");

@@ -40,6 +40,8 @@ async function run() {
       containerDefinitions: describeResponse.taskDefinition.containerDefinitions,
     }
     const newTaskDefContents = JSON.stringify(newTaskDef, null, 2);
+    core.debug("Task Definition:");
+    core.debug(newTaskDef);
     fs.writeFileSync(updatedTaskDefFile.name, newTaskDefContents);
     core.setOutput('task-definition', updatedTaskDefFile.name);
   }

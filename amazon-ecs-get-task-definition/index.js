@@ -46,13 +46,7 @@ async function run() {
       discardDescriptor: true
     });
     const newTaskDef = {
-      family,
-      // For some reason describing the task definition does not include networkMode
-      // even though documentation suggests it should, and the task definition has
-      // it defined. Anyways, we need to push this here, although it feels weird
-      // here..
-      networkMode: 'awsvpc',
-      containerDefinitions: describeResponse.taskDefinition.containerDefinitions,
+      ...taskDefinition,
     }
     const newTaskDefContents = JSON.stringify(newTaskDef, null, 2);
     core.debug("Task Definition:");

@@ -29,6 +29,8 @@ async function run() {
       throw(error);
     }
 
+    core.debug("Response:");
+    core.debug(describeResponse);
     const containerDef = describeResponse.taskDefinition.containerDefinitions.find(function(element) {
       return element.name == containerName;
     });

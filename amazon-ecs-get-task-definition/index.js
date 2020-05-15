@@ -46,7 +46,7 @@ async function run() {
       discardDescriptor: true
     });
     const newTaskDef = {
-      ...taskDefinition,
+      ...describeResponse.taskDefinition,
     }
     const newTaskDefContents = JSON.stringify(newTaskDef, null, 2);
     core.debug("Task Definition:");

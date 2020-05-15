@@ -16,7 +16,7 @@ async function run() {
     let revision = core.getInput('revision', { required: false });
 
     const params = {
-      taskDefinition: `${family}${revision ? `:${revision}` : ':18'}`,
+      taskDefinition: `${family}${revision ? `:${revision}` : ''}`,
     };
     
     let describeResponse;
